@@ -39,7 +39,7 @@ export class UserResolver {
       await UserModel.create({
         userName,
         email,
-        password: hash(password, 12),
+        password: await hash(password, 12),
       });
       return true;
     } catch (error) {
